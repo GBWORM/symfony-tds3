@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Developer
  *
@@ -20,45 +18,38 @@ class Developer
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
     /**
      * @var string
      *
      * @ORM\Column(name="identity", type="string", length=60, nullable=false)
      */
     private $identity;
-
     /**
-     * @param string $identity
+     * @return int
      */
-    public function setIdentity(string $identity): void
+    public function getId()
     {
-        $this->identity = $identity;
+        return $this->id;
     }
-
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
     /**
      * @return string
      */
-    public function getIdentity(): string
+    public function getIdentity()
     {
         return $this->identity;
     }
-
-
+    /**
+     * @param string $identity
+     */
+    public function setIdentity($identity)
+    {
+        $this->identity = $identity;
+    }
 }
